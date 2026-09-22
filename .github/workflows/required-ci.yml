@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo "P3-BATCH-CI on ${{ github.ref }}"
-          git log --oneline -n 8
-          sleep 75
+          echo "P3-CI ref=${{ github.ref }}"
+          git log --oneline -n 10
+          sleep 80
