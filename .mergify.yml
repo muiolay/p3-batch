@@ -1,0 +1,16 @@
+queue_rules:
+  - name: default
+    batch_size: 2
+    batch_max_wait_time: 30 s
+    queue_conditions:
+      - base=main
+    merge_conditions:
+      - check-success=required-ci
+
+pull_request_rules:
+  - name: queue
+    conditions:
+      - base=main
+    actions:
+      queue:
+        name: default
